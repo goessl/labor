@@ -1,0 +1,195 @@
+\documentclass[12pt,a4paper,twoside]{article}
+
+%Language
+\usepackage[ngerman]{babel}                     %German typographical rules, shortcuts like "Abb." instead of "Fig."
+\usepackage[utf8]{inputenc}                     %Input & font encoding (umlaute)
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}                         %Dunno, used in appl. math templ.
+\usepackage{csquotes}                           %Correct quoting (biblatex)
+%Math
+\usepackage{amsmath,amsthm,amsfonts,amssymb}    %General math stuff
+\usepackage[separate-uncertainty=true,per-mode=symbol-or-fraction,range-phrase=-]{siunitx} %Numbers & units
+    \sisetup{locale=DE}
+    \sisetup{output-decimal-marker={,}}         %Use , as decimal separator
+    %Custom units
+    \DeclareSIUnit\va{VA}                       %apparent power
+    \DeclareSIUnit\var{var}                     %volt-ampere reactive
+    \DeclareSIUnit\umdr{U}                      %revolutions
+    \DeclareSIUnit\px{px}                       %pixel
+    \DeclareSIUnit\torr{Torr}                   %torr
+%Chemistry
+\usepackage{mhchem}
+%Document stuff
+\usepackage[style=numeric]{biblatex}            %Better than builtin bibtex
+    \addbibresource{bibliography.bib}
+\usepackage{fancyhdr}                           %Custom header & footer
+\usepackage{titling}                            %Permanently available title, author
+\usepackage{lastpage}                           %Total page number
+\usepackage[margin=1in,headheight=15pt]{geometry} %Margins, headheight: 15/28pt for single/double line header
+\usepackage{pdflscape}                          %Single landscape pages
+%Graphical
+\usepackage{caption}                            %Caption options
+    \captionsetup[table]{skip=6pt}
+\usepackage{graphicx}                           %Grafiken
+\usepackage{tikz}                               %Generates graphics
+\usepackage{pgfplots}                           %Plots
+\usepackage{pgfplotstable}                      %Plots from tables
+    \pgfplotsset{compat=1.14}
+\usepackage{epic}                               %Better picture mode
+%Tables
+\usepackage{multirow}                           %multi row cells, for multicolumn no import needed
+\usepackage{array}                              %Advanced tables
+\usepackage{float}                              %Positioning arguments
+\usepackage{longtable}                          %Multipage tables
+%Usefull
+\usepackage{pdfpages}                           %Include PDFs
+\usepackage{hyperref}                           %Links (maybe use url package?)
+\usepackage{url}                                %Line breaks in urls
+%Utility
+\usepackage{todonotes}                          %TODO annotations
+\usepackage[normalem]{ulem}                     %Strike through text
+
+%Custom operators
+\DeclareMathOperator{\arsinh}{arsinh}           %trig
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+\DeclareMathOperator{\sgn}{sgn}                 %sign
+\DeclareMathOperator{\tr}{tr}                   %trace
+\DeclareMathOperator{\grad}{grad}               %multivariate analysis
+\let\div\relax
+\DeclareMathOperator{\div}{div}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\dom}{dom}                 %functional analysis
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Var}{Var}                 %staticstics
+\DeclareMathOperator{\StD}{StD}
+\DeclareMathOperator{\CoV}{CoV}
+
+%Theorems
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{satz}{Satz}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{korollar}{Korollar}[section]
+\newtheorem{bemerkung}{Bemerkung}[definition]
+
+%Math columns
+\newcolumntype{L}{>{$}l<{$}}
+\newcolumntype{C}{>{$}c<{$}}
+\newcolumntype{R}{>{$}r<{$}}
+
+
+
+\title{Labor 2 - Title}
+\author{Sebastian Gössl - 11904703}
+\date{DD.MM.YYYY}
+%adjust headheight if header uses multiple lines
+
+
+\pagestyle{fancyplain}
+\fancyhead[L]{\thedate}
+\fancyhead[C]{\theauthor}
+\fancyhead[R]{\thetitle}
+\fancyfoot[C]{\thepage{ }/ \pageref*{LastPage}}
+
+
+
+
+\begin{document}
+
+
+
+\includepdf{Deckblatt}
+
+
+
+\tableofcontents
+\newpage
+
+
+
+\section*{Anmerkung}
+
+\todo{Deckblatt, Title, Datum}
+Dies ist ein 3rd-Hand Protokoll. Das Experiment wurde nicht von Autor durchgeführt sondern wurde eine Videoaufzeichnung \cite{teachcenter} vom Experiment protokolliert. Weiters stammen das Titelblatt (vom Autor ausgefüllt) und die ersten drei Kapitel (inhaltlich) ebenfalls aus diesem Verzeichnis.
+
+
+
+\section{Aufgabenstellung}
+
+
+
+\section{Voraussetzungen \& Grundlagen}
+
+
+
+\section{Versuchsanordnung}
+
+
+
+\section{Geräteliste}
+
+\begin{table}[H]
+    \centering
+    \caption{Im Versuch verwendete Geräte und Utensilien.}
+    \label{tab:geraete}
+    \begin{tabular}{| l | l | l | S C |}
+        \hline
+        Gerät   & Typ   & Gerätenummer  & \multicolumn{2}{c|}{Unsicherheit} \\
+        \hline
+        \hline
+    \end{tabular}
+\end{table}
+
+
+
+\section{Versuchsdurchführung \& Messergebnisse}
+
+
+
+\section{Auswertung}
+
+In der Auswertung werden zur erhöhten Genauigkeit durchgehend ungerundete Werte bis zu den Endergebnissen verwendet und nur zur Darstellung gerundet. Daher ist es erforderlich, dass dies auch bei einer erneuten Auswertung geschieht. \\
+Zur Berechnung der Unsicherheiten wird, wenn nicht anders angegeben, die Größtunsicherheitsmethode verwendet.
+
+
+
+\section{Diskussion}
+
+
+
+\section{Zusammenfassung}
+
+
+
+\printbibliography
+\addcontentsline{toc}{section}{Literatur}
+
+
+
+\end{document}
+
+
+
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=\linewidth]{fileWithoutExtension}
+%    \caption{Beschreibung}
+%    \label{fig:name}
+%\end{figure}
+
+%\begin{table}[H]
+%    \centering
+%    \caption{Beschreibung}
+%    \label{tab:name}
+%    \begin{tabular}{| l | *{1}{S|}}
+%        \hline
+%        Nr.    & {$x \ / \ \si{u}$} \\
+%        \hline
+%        1      & 1,0 \\
+%        \hline
+%    \end{tabular}
+%\end{table}
