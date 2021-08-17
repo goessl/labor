@@ -1,92 +1,99 @@
 \documentclass[12pt,a4paper,twoside]{article}
 
-%Language
-\usepackage[ngerman]{babel}                     %German typographical rules, shortcuts like "Abb." instead of "Fig."
-\usepackage[utf8]{inputenc}                     %Input & font encoding (umlaute)
-\usepackage[T1]{fontenc}
-\usepackage{ae,aecompl}                         %Dunno, used in appl. math templ.
-\usepackage{csquotes}                           %Correct quoting (biblatex)
-%Math
-\usepackage{amsmath,amsthm,amsfonts,amssymb}    %General math stuff
-\usepackage[separate-uncertainty=true,per-mode=symbol-or-fraction,range-phrase=-]{siunitx} %Numbers & units
-    \sisetup{locale=DE}
-    \sisetup{output-decimal-marker={,}}         %Use , as decimal separator
-    %Custom units
-    \DeclareSIUnit\va{VA}                       %apparent power
-    \DeclareSIUnit\var{var}                     %volt-ampere reactive
-    \DeclareSIUnit\umdr{U}                      %revolutions
-    \DeclareSIUnit\px{px}                       %pixel
-    \DeclareSIUnit\torr{Torr}                   %torr
-%Chemistry
-\usepackage{mhchem}
-%Document stuff
-\usepackage[style=numeric]{biblatex}            %Better than builtin bibtex
-    \addbibresource{bibliography.bib}
-\usepackage{fancyhdr}                           %Custom header & footer
-\usepackage{titling}                            %Permanently available title, author
-\usepackage{lastpage}                           %Total page number
-\usepackage[margin=1in,headheight=15pt]{geometry} %Margins, headheight: 15/28pt for single/double line header
-\usepackage{pdflscape}                          %Single landscape pages
-%Graphical
-\usepackage{caption}                            %Caption options
-    \captionsetup[table]{skip=6pt}
-\usepackage{graphicx}                           %Grafiken
-\usepackage{tikz}                               %Generates graphics
-\usepackage{pgfplots}                           %Plots
-\usepackage{pgfplotstable}                      %Plots from tables
-    \pgfplotsset{compat=1.14}
-\usepackage{epic}                               %Better picture mode
-%Tables
-\usepackage{multirow}                           %multi row cells, for multicolumn no import needed
-\usepackage{array}                              %Advanced tables
-\usepackage{float}                              %Positioning arguments
-\usepackage{longtable}                          %Multipage tables
-%Usefull
-\usepackage{pdfpages}                           %Include PDFs
-\usepackage{hyperref}                           %Links (maybe use url package?)
-\usepackage{url}                                %Line breaks in urls
-%Utility
-\usepackage{todonotes}                          %TODO annotations
-\usepackage[normalem]{ulem}                     %Strike through text
 
-%Custom operators
-\DeclareMathOperator{\arsinh}{arsinh}           %trig
+
+%language
+%https://www.overleaf.com/learn/latex/German
+\usepackage[utf8]{inputenc}                         %input encoding (umlaute)
+\usepackage[T1]{fontenc}                            %correct encoding in resulting PDF
+\usepackage[ngerman]{babel}                         %German-specific commands
+\usepackage{csquotes}                               %quotation, https://www.overleaf.com/learn/latex/Typesetting_quotations
+
+%document stuff
+\usepackage[style=numeric]{biblatex}                %better than builtin bibtex, https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex
+    \addbibresource{bibliography.bib}
+\usepackage{fancyhdr}                               %custom header & footer, https://www.overleaf.com/learn/latex/Headers_and_footers
+\usepackage{titling}                                %permanently available title, author, ...
+\usepackage{lastpage}                               %total page number
+\usepackage[margin=1in,headheight=15pt]{geometry}   %margins, headheight: 15/28pt for single/double line header
+\usepackage{pdflscape}                              %single landscape pages, e.g. matplotlib outputs
+\usepackage{pdfpages}                               %include PDFs, https://ctan.org/pkg/pdfpages?lang=en
+\usepackage{hyperref}                               %links, https://www.overleaf.com/learn/latex/Hyperlinks
+
+%math, physics
+\usepackage{amsmath,amsthm,amsfonts,amssymb}        %equation formatting, theorems, fonts (blackboard), access to symbols, https://www.overleaf.com/learn/latex/Mathematical_expressions, https://www.overleaf.com/learn/latex/Theorems_and_proofs, https://www.overleaf.com/learn/latex/Mathematical_fonts, https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols
+\usepackage[locale=DE,output-decimal-marker={,},separate-uncertainty=true,per-mode=symbol-or-fraction,range-phrase=-]{siunitx} %units, https://ctan.org/pkg/siunitx?lang=en
+    %custom units
+    \DeclareSIUnit\va{VA}                           %apparent power
+    \DeclareSIUnit\var{var}                         %volt-ampere reactive
+    \DeclareSIUnit\umdr{U}                          %revolutions
+    \DeclareSIUnit\px{px}                           %pixel
+    \DeclareSIUnit\torr{Torr}                       %torr
+
+%tables
+\usepackage{multirow}                               %multi row cells, for multicolumn no import is needed, https://www.overleaf.com/learn/latex/Tables#Combining_rows_and_columns
+\usepackage{array}                                  %fixed sized cells, https://www.overleaf.com/learn/latex/Tables#Tables_with_fixed_length
+\usepackage{float}                                  %positioning, https://www.overleaf.com/learn/latex/Positioning_of_Figures
+\usepackage{longtable}                              %multipage tables, https://www.overleaf.com/learn/latex/Tables#Multi-page_tables
+
+%graphics
+\usepackage{graphicx}                               %graphics, https://www.overleaf.com/learn/latex/Inserting_Images
+    \graphicspath{ {./images/} }                        %images in subfolder to keep root clean
+\usepackage{caption}                                %more caption options
+\usepackage{subcaption}                             %captions of subfigures
+    \captionsetup[table]{skip=6pt}
+%\usepackage{tikz}                                   %generate graphics, https://www.overleaf.com/learn/latex/TikZ_package
+%\usepackage{pgfplots}                               %generate plots, https://www.overleaf.com/learn/latex/Pgfplots_package
+%    \pgfplotsset{compat=1.9}
+%\usepackage{epic}                                   %better picture mode, https://ctan.org/pkg/epic?lang=en
+
+%disciplines other than math & physics
+\usepackage[version=4]{mhchem}                      %simpler to use than chemfig, https://www.overleaf.com/learn/latex/Chemistry_formulae
+
+%utility
+\usepackage{todonotes}                              %todo annotations
+\usepackage[normalem]{ulem}                         %strike through text
+
+
+
+%custom operators, https://www.overleaf.com/learn/latex/Operators#Defining_your_own_operators
+\DeclareMathOperator{\arsinh}{arsinh}               %trig
 \DeclareMathOperator{\arcosh}{arcosh}
 \DeclareMathOperator{\artanh}{artanh}
-\DeclareMathOperator{\sgn}{sgn}                 %sign
-\DeclareMathOperator{\tr}{tr}                   %trace
-\DeclareMathOperator{\grad}{grad}               %multivariate analysis
+\DeclareMathOperator{\grad}{grad}                   %multivariate analysis
 \let\div\relax
 \DeclareMathOperator{\div}{div}
 \DeclareMathOperator{\rot}{rot}
-\DeclareMathOperator{\dom}{dom}                 %functional analysis
+\DeclareMathOperator{\dom}{dom}                     %functional analysis
 \DeclareMathOperator{\ran}{ran}
 \DeclareMathOperator{\Vol}{Vol}
 \DeclareMathOperator{\Res}{Res}
-\DeclareMathOperator{\Var}{Var}                 %staticstics
+\DeclareMathOperator{\Var}{Var}                     %staticstics
 \DeclareMathOperator{\StD}{StD}
 \DeclareMathOperator{\CoV}{CoV}
+\DeclareMathOperator{\sgn}{sgn}                     %other
+\DeclareMathOperator{\tr}{tr}
 
-%Theorems
+%theorems, https://www.overleaf.com/learn/latex/Theorems_and_proofs
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
+\newtheorem{bemerkung}{Bemerkung}[definition]
 \newtheorem{satz}{Satz}[section]
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{proposition}{Proposition}[section]
 \newtheorem{korollar}{Korollar}[section]
-\newtheorem{bemerkung}{Bemerkung}[definition]
 
-%Math columns
+%math columns, https://tex.stackexchange.com/q/257128
 \newcolumntype{L}{>{$}l<{$}}
 \newcolumntype{C}{>{$}c<{$}}
 \newcolumntype{R}{>{$}r<{$}}
 
 
 
-\title{Labor 2 - Title}
-\author{Sebastian Gössl - 11904703}
+\title{Labor N - Experiment}
+\author{Vorname Nachname - Matrikelnummer}
 \date{DD.MM.YYYY}
-%adjust headheight if header uses multiple lines
+%adjust headheight: 15/28pt for single/double line header
 
 
 \pagestyle{fancyplain}
@@ -102,7 +109,7 @@
 
 
 
-\includepdf{Deckblatt}
+\includepdf{cover/Deckblatt1}
 
 
 
@@ -113,7 +120,6 @@
 
 \section*{Anmerkung}
 
-\todo{Deckblatt, Title, Datum}
 Dies ist ein 3rd-Hand Protokoll. Das Experiment wurde nicht von Autor durchgeführt sondern wurde eine Videoaufzeichnung \cite{teachcenter} vom Experiment protokolliert. Weiters stammen das Titelblatt (vom Autor ausgefüllt) und die ersten drei Kapitel (inhaltlich) ebenfalls aus diesem Verzeichnis.
 
 
@@ -152,7 +158,7 @@ Dies ist ein 3rd-Hand Protokoll. Das Experiment wurde nicht von Autor durchgefü
 
 \section{Auswertung}
 
-In der Auswertung werden zur erhöhten Genauigkeit durchgehend ungerundete Werte bis zu den Endergebnissen verwendet und nur zur Darstellung gerundet. Daher ist es erforderlich, dass dies auch bei einer erneuten Auswertung geschieht. \\
+In der Auswertung werden zur erhöhten Genauigkeit durchgehend ungerundete Werte bis zu den Endergebnissen verwendet und nur zur Darstellung gerundet. \\
 Zur Berechnung der Unsicherheiten wird, wenn nicht anders angegeben, die Größtunsicherheitsmethode verwendet.
 
 
@@ -171,25 +177,3 @@ Zur Berechnung der Unsicherheiten wird, wenn nicht anders angegeben, die Größt
 
 
 \end{document}
-
-
-
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[width=\linewidth]{fileWithoutExtension}
-%    \caption{Beschreibung}
-%    \label{fig:name}
-%\end{figure}
-
-%\begin{table}[H]
-%    \centering
-%    \caption{Beschreibung}
-%    \label{tab:name}
-%    \begin{tabular}{| l | *{1}{S|}}
-%        \hline
-%        Nr.    & {$x \ / \ \si{u}$} \\
-%        \hline
-%        1      & 1,0 \\
-%        \hline
-%    \end{tabular}
-%\end{table}

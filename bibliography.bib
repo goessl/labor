@@ -1,202 +1,216 @@
+%https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex
+%for book where a printed and an online version exists, the online version is used as these are more common and implementing multiple isbns is too much effort/code
+
+
+
+%TeachCenter & Moodle
+@online{teachcenter,
+    author      = {TU Graz TeachCenter},
+    title       = {"Laborübungen 2: Elektrizität, Magnetismus, Optik". Kurs: PHYD30UF},
+    url         = {https://tc.tugraz.at/main/course/view.php?id=127},
+    note        = {(besucht am \thedate)}
+}
+@online{moodle,
+    author      = {uni-graz Moodle},
+    title       = {"Laborübungen 2: Elektrizität, Magnetismus, Optik". Kurs: PHY.D30UB},
+    url         = {https://moodle.uni-graz.at/course/view.php?id=66974},
+    note        = {(besucht am \thedate)}
+}
+
 
 %programs
-@misc{mathcad,
+@software{mathcad,
     author      = {PTC},
-    title       = {MathCAD Prime 3.0}
+    title       = {Mathcad},
+    version     = {Prime 3.0}
 }
 
 
 %lecture notes
-@article{vektor,
-    author      = {Holzmann Markus},
-    title       = {Vektoranalysis. Vorlesungsskriptum. Bachelorstudium Physik.},
-    year        = {Sommersemester 2020}
+@booklet{vektor,
+    author      = {Holzmann, Markus},
+    title       = {Vektoranalysis},
+    subtitle    = {Vorlesungsskriptum},
+    note        = {Bachelorstudium Physik. Sommersemester 2020}
 }
-
-@article{funki,
-    author      = {Behrndt Jussi, Holzmann Markus, Schlosser Peter},
-    title       = {Funktionalanalysis und partielle Differentialgleichungen. Skriptum.},
-    year        = {Wintersemester 2020/21}
+@booklet{funki,
+    author      = {Behrndt, Jussi and Holzmann, Markus and Schlosser, Peter},
+    title       = {Funktionalanalysis und partielle Differentialgleichungen},
+    subtitle    = {Skriptum},
+    note        = {Wintersemester 2020/21}
 }
-
 
 
 %physics
-@book{dem1,
-    author      = {Demtröder Wolfgang},
-    title       = {Experimentalphysik 1. Mechanik und Wärme.},
-    edition     = {8. Auflage},
+@book{dem1,     %edition we got on teachcenter (newer available on Springer)
+    author      = {Demtröder, Wolfgang},
+    title       = {Experimentalphysik 1},
+    subtitle    = {Mechanik und Wärme},
     year        = {2018},
-    isbn        = {978-3-662-54846-2}
+    edition     = {8},
+    publisher   = {Springer Berlin Heidelberg},
+    isbn        = {978-3-662-54847-9},
+    doi         = {10.1007/978-3-662-54847-9}
 }
-@book{dem1e,
-    author      = {Demtröder Wolfgang},
-    title       = {Experimentalphysik 1. Mechanik und Wärme.},
-    edition     = {8. Auflage},
-    year        = {2018},
-    isbn        = {978-3-662-54847-9}
-}
-
-@book{dem2,
-    author      = {Demtröder Wolfgang},
-    title       = {Experimentalphysik 2. Elektrizität und Optik.},
-    edition     = {7., korrigierte und erweiterte Auflage},
-    year        = {2017},
-    isbn        = {978-3-662-55789-1}
-}
-
-@book{dem2e,
-    author      = {Demtröder Wolfgang},
-    title       = {Experimentalphysik 2. Elektrizität und Optik.},
-    edition     = {6., überarbeitete und aktualisierte Auflage},
+@book{dem2,     %edition we got on teachcenter (newer available on Springer)
+    author      = {Demtröder, Wolfgang},
+    title       = {Experimentalphysik 2},
+    subtitle    = {Elektrizität und Optik},
     year        = {2013},
-    isbn        = {978-3-642-29944-5}
+    edition     = {6},
+    publisher   = {Springer Berlin Heidelberg},
+    isbn        = {978-3-642-29944-5},
+    doi         = {10.1007/978-3-642-29944-5}
+}
+@book{dem3,     %Springer
+    author      = {Demtröder, Wolfgang},
+    title       = {Experimentalphysik 3},
+    subtitle    = {Atome, Moleküle und Festkörper},
+    year        = {2016},
+    edition     = {5},
+    publisher   = {Springer Berlin Heidelberg},
+    isbn        = {978-3-662-49094-5},
+    doi         = {10.1007/978-3-662-49094-5}
 }
 
-@book{fliessbach,
-    author      = {Fließbach Torsten},
-    title       = {Mechanik. Lehrbuch zur Theoretischen Physik I.},
-    edition     = {8. Auflage},
+@book{fiessbach,%Springer
+    author      = {Fließbach, Torsten},
+    title       = {Mechanik},
+    subtitle    = {Lehrbuch zur Theoretischen Physik I},
     year        = {2020},
-    isbn        = {978-3-662-61602-4}
+    edition     = {8},
+    publisher   = {Springer Berlin Heidelberg},
+    isbn        = {978-3-662-61603-1},
+    doi         = {10.1007/978-3-662-61603-1}
 }
 
-@book{fliessbache,
-    author      = {Fließbach Torsten},
-    title       = {Mechanik. Lehrbuch zur Theoretischen Physik I.},
-    edition     = {8. Auflage},
-    year        = {2020},
-    isbn        = {978-3-662-61603-1}
+@book{eichler,  %Springer
+    author      = {Eichler, Hans Joachim
+        and Kronfeldt, Heinz-Detlef
+        and Sahm, Jürgen},
+    title       = {Das neue Physikalische Grundpraktikum},
+    year        = {2016},
+    publisher   = {Springer Berlin Heidelberg},
+    isbn        = {978-3-662-49023-5},
+    doi         = {10.1007/978-3-662-49023-5}
 }
 
-@book{krane,
-    author      = {Krane Kenneth S.},
-    title       = {Modern Physics},
-    edition     = {3rd edition},
+@book{povh,     %Springer
+    author      = {Povh, Bogdan and Soergel, Elisabeth},
+    title       = {Anschauliche Physik},
+    subtitle    = {für Naturwissenschaftler},
+    year        = {2014},
+    publisher   = {Springer Berlin Heidelberg},
+    isbn        = {978-3-642-54496-5},
+    doi         = {10.1007/978-3-642-54496-5}
+}
+
+@book{krane,    %Wiley Custom
+    author      = {Krane, Kenneth S.},
+    title       = {Atom- Kern- und Teilchenphysik an den Grazer Universitäten},
     year        = {2012},
-    isbn        = {978-1-118-06114-5}
+    publisher   = {John Wiley \& Sons, Inc.},
+    isbn        = {978-1-11992-182-0},
+    note        = {Wiley Custom Version von Modern Physics, 3rd Edition, 978-1-118-06114-5}
 }
 
-@book{langpucker,
-    author      = {Lang Christian B., Pucker Norbert},
-    title       = {Mathematische Methoden in der Physik},
-    edition     = {3. Auflage},
-    year        = {2016},
-    isbn        = {978-3-662-49312-0}
-}
-
-@book{langpuckere,
-    author      = {Lang Christian B., Pucker Norbert},
-    title       = {Mathematische Methoden in der Physik},
-    edition     = {3. Auflage},
-    year        = {2016},
-    isbn        = {978-3-662-49313-7}
-}
-
-@book{giancolie,
-    author      = {Giancoli Douglas C.},
-    title       = {Physik. Lehr und Übungsbuch.},
-    edition     = {3., erweiterte Auflage},
-    year        = {2010},
-    isbn        = {978-3-8689-4023-7}
-}
 
 
 %math
-@book{arens,
-    author      = {Arens Tilo},
+@book{arens,    %Springer
+    author= {Arens, Tilo
+        and Hettlich, Frank
+        and Karpfinger, Christian
+        and Kockelkorn, Ulrich
+        and Lichtenegger, Klaus
+        and Stachel, Hellmuth},
     title       = {Mathematik},
-    edition     = {4. Auflage},
     year        = {2018},
-    isbn        = {978-3-662-56740-1}
+    edition     = {4},
+    publisher   = {Springer Berlin Heidelberg},
+    isbn        = {978-3-662-56741-8},
+    doi         = {10.1007/978-3-662-56741-8}
 }
 
-@book{arense,
-    author      = {Arens Tilo},
-    title       = {Mathematik},
-    edition     = {4. Auflage},
-    year        = {2018},
-    isbn        = {978-3-662-56741-8}
+@book{langpucker, %Springer
+    author      = {Lang, Christian B. and Pucker, Norbert},
+    title       = {Mathematische Methoden in der Physik},
+    year        = {2016},
+    edition     = {3},
+    publisher   = {Springer Berlin Heidelberg},
+    isbn        = {978-3-662-49313-7},
+    doi         = {10.1007/978-3-662-49313-7}
 }
+
 
 
 %technical college
-@book{boege,
-    author      = {Böge Alfred},
-    title       = {Handbuch Maschinenbau. Grundlagen und Anwendungen der Maschinenbau-Technik. Ausgabe für Österreich Band 1.},
-    edition     = {9., überarbeitete und aktualisierte Auflage},
-    year        = {2011},
-    isbn        = {978-3-8348-1870-6}
+@book{boege,    %newer Springer version rather than older print that was provided
+    editor      = {Böge, Alfred and Böge, Wolfgang},
+    title       = {Handbuch Maschinenbau},
+    subtitle    = {Grundlagen und Anwendungen der Maschinenbau-Technik},
+    year        = {2021},
+    edition     = {24},
+    publisher   = {Springer Fachmedien Wiesbaden},
+    isbn        = {978-3-658-30273-3},
+    doi         = {10.1007/978-3-658-30273-3}
+}
+@book{boegeTabForm, %newer Springer version rather than older print that was provided
+    editor      = {Böge, Alfred and Böge, Wolfgang},
+    title       = {Formeln und Tabellen Maschinenbau},
+    subtitle    = {Für Studium und Praxis},
+    year        = {2015},
+    edition     = {4},
+    publisher   = {Springer Fachmedien Wiesbaden},
+    isbn        = {978-3-658-09817-9},
+    doi         = {10.1007/978-3-658-09817-9}
 }
 
-@book{boegeE,
-    author      = {Böge Alfred},
-    title       = {Handbuch Maschinenbau. Grundlagen und Anwendungen der Maschinenbau-Technik.},
-    edition     = {20., überarbeitete und aktualisierte Auflage},
-    year        = {2011},
-    isbn        = {978-3-8348-1025-0}
+@book{fachkundeMetall, %provided print
+    editor      = {Dillinger, Josef},
+    title       = {Fachkunde Metall},
+    subtitle    = {Mechanische Technologie},
+    year        = {2010},
+    edition     = {56},
+    publisher   = {Europa Lehrmittel},
+    note        = {als Ausgabe für Österreich}
+}
+@book{tabbuchMetall, %provided print
+    editor      = {Fischer, Ulrich},
+    title       = {Tabellenbuch Metall},
+    year        = {2012},
+    edition     = {45},
+    publisher   = {Europa Lehrmittel},
+    note        = {Ausgabe für Österreich}
 }
 
-@book{boegeTabFormE,
-    author      = {Böge Alfred},
-    title       = {Formeln und Tabellen Maschinenbau. Für Studium und Praxis.},
-    edition     = {1. Auflage},
-    year        = {März 2007},
-    isbn        = {978-3-8348-0032-9}
-}
-
-@book{fachkundeMetall,
-    author      = {Dillinger Josef},
-    title       = {Fachkunde Metall. Mechanische Technologie.},
-    edition     = {56., neu bearbeitete Auflage als Ausgabe für Österreich},
-    year        = {2010}
-}
-
-@book{tabbuchMetall,
-    author      = {Fischer Ulrich},
-    title       = {Tabellenbuch Metall.},
-    edition     = {45., neu bearbeitete und erweiterte Auflage. Ausgabe für Österreich},
-    year        = {2012}
-}
-
-@book{decker,
-    author      = {Decker Karl-Heinz},
-    title       = {Maschinenelemente. Funktion, Gestaltung und Berechnung.},
-    edition     = {19., aktualisierte Auflage},
+@book{decker,   %provided print
+    author      = {Decker, Karl-Heinz and Kabus, Karlheinz},
+    title       = {Maschinenelemente},
+    subtitle    = {Funktion, Gestaltung und Berechnung},
     year        = {2014},
+    edition     = {19},
+    publisher   = {Carl Hanser München},
+    isbn        = {978-3-446-43856-9}
+}
+@book{deckerTab, %provided print
+    author      = {Decker, Karl-Heinz and Kabus, Karlheinz},
+    title       = {Maschinenelemente},
+    subtitle    = {Tabellen und Diagramme},
+    year        = {2014},
+    edition     = {19},
+    publisher   = {Carl Hanser München},
     isbn        = {978-3-446-43856-9}
 }
 
-@book{deckerE,
-    author      = {Decker Karl-Heinz},
-    title       = {Maschinenelemente. Funktion, Gestaltung und Berechnung.},
-    edition     = {18., aktualisierte Auflage},
-    year        = {2011},
-    isbn        = {978-3-446-42988-8}
-}
-
-@book{deckerTab,
-    author      = {Decker Karl-Heinz},
-    title       = {Maschinenelemente. Tabellen und Diagramme.},
-    edition     = {19., aktualisierte Auflage},
-    year        = {2014},
-    isbn        = {978-3-446-43856-9}
-}
-
-@book{deckerTabe,
-    author      = {Decker Karl-Heinz},
-    title       = {Maschinenelemente. Tabellen und Diagramme.},
-    edition     = {18., aktualisierte Auflage},
-    year        = {2011},
-    isbn        = {978-3-446-42988-8}
-}
 
 
-%general
-@book{atlas,
-    publisher   = {Ed. Hölzel},
+%others
+@book{atlas,    %provided
     title       = {Neuer Kozenn-Atlas.},
-    edition     = {1., aktualisierte Neuauflage},
     year        = {2009},
-    isbn        = {978-3-446-43856-9}
+    edition     = {1},
+    publisher   = {Ed. Hölzel Wien},
+    isbn        = {978-3-446-43856-9},
+    url         = {www.kozenn.at}
 }
