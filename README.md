@@ -13,6 +13,8 @@ Dies ist eine Latex-Vorlage für die Labore des Physik-Bachelors an der TU Graz 
  - [Danksagung & hilfreiche Links](#danksagung---hilfreiche-links)
  - [Lizenz (MIT)](#lizenz--mit-)
 
+Fertige Protokolle, welche mit dieser Vorlage gefertigt wurden sind auf [https://www.student.tugraz.at/goessl/](https://www.student.tugraz.at/goessl/) einsehbar.
+
 
 ## Verwendung/Vorbereitung
 Es wird checklistenmäßig aufgezählt, wie dieses Template an die verschiedenen Autoren und Experimente angepasst wird um einheitlich gleiche Protokolle zu erhalten.
