@@ -15,6 +15,7 @@ Dies ist eine Latex-Vorlage für die Labore des Physik-Bachelors an der TU Graz 
  - [Lizenz (MIT)](#lizenz--mit-)
 
 Fertige Protokolle, welche mit dieser Vorlage gefertigt wurden sind auf [https://www.student.tugraz.at/goessl/](https://www.student.tugraz.at/goessl/) einsehbar.
+Ein Beispielprojekt befindet sich im Unterordner [examples/tu6_transformator/](examples/tu6_transformator/).
 
 
 ## Verwendung/Vorbereitung
@@ -49,7 +50,7 @@ Sollte die Kopfzeile einzeilig möglich sein (normalerweise nicht möglich da si
  7. Da zum Zeitpunkt des Verfassens dieser Vorlage noch immer eine viele Labore im Onlinemodus geführt werden, ist das Kapitel `Anmerkung` standardmäßig in der Vorlage enthalten. Es folgen die Standardfloskeln für ein Videolabor und eine Hintereinanderausführung:
     > Dies ist ein 3rd-Hand Protokoll. Das Experiment wurde nicht vom Autor durchgeführt, sondern hat dieser eine Videoaufzeichnung \cite{teachcenter} vom Experiment protokolliert. Weiters stammen das Titelblatt (vom Autor ausgefüllt) und die ersten drei Kapitel (inhaltlich) ebenfalls aus diesem Verzeichnis.
 
-    > Aufgrund der herrschenden COVID-19-Maßnahmen, wurde die Laborübung nicht von beiden Gruppenmitglieder gleichzeitig durchgeführt, sondern zuerst von Angermann, Leo und anschließend erneut von Gössl, Sebastian. Beide führten alle Aufgaben vollständig durch und werteten ihre jeweiligen Daten, über gleiche Rechenwege, getrennt aus. Wird nur ein Ergebnis angegeben, is es nur dies des Schriftführers (Zwischenergebnis \& Diagramme, zu besseren Übersicht), ansonsten werden die jeweiligen Ergebnise der Laboranten nebeneinander angeführt, so dass diese verglichen werden können.
+    > Aufgrund der herrschenden COVID-19-Maßnahmen, wurde die Laborübung nicht von beiden Gruppenmitglieder gleichzeitig durchgeführt, sondern zuerst von Angermann, Leo und anschließend erneut von Gössl, Sebastian. Beide führten alle Aufgaben vollständig durch und werteten ihre jeweiligen Daten, über gleiche Rechenwege, getrennt aus. Wird nur ein Ergebnis angegeben, ist es nur dies des Schriftführers (Zwischenergebnisse \& Diagramme, zu besseren Übersicht), ansonsten werden die jeweiligen Ergebnise der Laboranten nebeneinander angeführt, so dass diese verglichen werden können.
 
 ### Design Patterns
 
