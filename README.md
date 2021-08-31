@@ -131,7 +131,7 @@ Bei so gut wie allen Tabellen ist in der Beschreibung auf die Quelle zu referenz
 
 ### Bibliography
 
-Zitieren mit `\cite{}` z.B. `$F=\SI{2.0+-0.5}{\N}$ lt. \cite{boege} Tab 23.11`.
+Zitieren mit `\cite{}` z.B. `$F=\SI{2,0+-0,5}{\N}$ lt. \cite{boege} Tab 23.11`.
 
 Die TeachCenter-Kurse & Moodle-Kurse sind ebenfalls bereits in der Bibliography enthalten, jedoch ist der Link zu aktualisieren, da jedes Semester ein neuer Kurs und damit eine neue Adresse angelegt wird.
 
