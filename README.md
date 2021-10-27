@@ -30,12 +30,16 @@ Es sind die Deckblätter für das Labor 1 & 2 als `.doc` oder `.pdf` in dem Unte
  2. Betreuer: Im Online-Verzeichnis ([TeachCenter](tc.tugraz.at) & [Moodle](moodle.uni-graz.at)) gibt es meist eine Datei mit den Betreuern der jeweiligen Experimente. Bei Unsicherheit in der Einheit nach dem Namen fragen. In den Onlinesystemen (online.tugraz.at & online.uni-graz.at) kann man notfalls versuchen mit der Personensuche den vollständigen Namen herauszufinden. Der Name ist ohne Titel anzugeben; z.B. `Gössl, Sebastian`
  3. Gruppennummer laut Rotationsschema; z.B. `4`
  4. Namen der Gruppenmitglieder in alphabetischer Reihenfolge inklusive Kennzeichnung des Schriftführers. Sollte es keinen einzelnen Schriftführer geben, ist die Bezeichnung wegzulassen; z.B.
+
         Angermann, Leo
         Gössl, Sebastian (Schriftführer)
+
  6. Kennzahl des Studiums. In den Onlinesystemen unter `Mein Studium > Meine Studien anzeigen` einsehbar; z.B. `UF 033 678` (Physik-Bachelor 2017-Curriculum)
  7. Matrikelnummer der Gruppenmitglieder in der gleichen Reihenfolge der Namen; z.B.
+
         12345678
         90123456
+
  8. Datum des Tages, an welchem das Experiment durchgeführt wurde, im österreichisch gewöhnten `DD.MM.YYYY`-Format.
  9. Semester im Format `YYSS`.
 
