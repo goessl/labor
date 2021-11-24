@@ -22,6 +22,7 @@
 
 %math, physics
 \usepackage{amsmath,amsthm,amsfonts,amssymb}        %equation formatting, theorems, fonts (blackboard), access to symbols, https://www.overleaf.com/learn/latex/Mathematical_expressions, https://www.overleaf.com/learn/latex/Theorems_and_proofs, https://www.overleaf.com/learn/latex/Mathematical_fonts, https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols
+\usepackage{eurosym}
 \usepackage[locale=DE,output-decimal-marker={,},separate-uncertainty=true,per-mode=symbol-or-fraction,range-phrase=-]{siunitx} %units, https://ctan.org/pkg/siunitx?lang=en
     %custom units
     \DeclareSIUnit\va{VA}                           %apparent power
@@ -29,6 +30,7 @@
     \DeclareSIUnit\umdr{U}                          %revolutions
     \DeclareSIUnit\px{px}                           %pixel
     \DeclareSIUnit\torr{Torr}                       %torr
+    \DeclareSIUnit\EUR{\text{\euro}}                %euro
 
 %tables
 \usepackage{multirow}                               %multi row cells, for multicolumn no import is needed, https://www.overleaf.com/learn/latex/Tables#Combining_rows_and_columns
