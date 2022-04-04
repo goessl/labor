@@ -25,11 +25,12 @@
 \usepackage{eurosym}
 \usepackage[locale=DE,output-decimal-marker={,},separate-uncertainty=true,per-mode=symbol-or-fraction,range-phrase=-]{siunitx} %units, https://ctan.org/pkg/siunitx?lang=en
     %custom units
-    \DeclareSIUnit\va{VA}                           %apparent power
+    \DeclareSIUnit\astronomicalunit{ua}             %overwrite default au, see ISO80000-1 2016-06-15 Tab. 6
+    \DeclareSIUnit\VA{VA}                           %apparent power
     \DeclareSIUnit\var{var}                         %volt-ampere reactive
-    \DeclareSIUnit\umdr{U}                          %revolutions
+    \DeclareSIUnit\U{U}                             %revolutions
     \DeclareSIUnit\px{px}                           %pixel
-    \DeclareSIUnit\torr{Torr}                       %torr
+    \DeclareSIUnit\Torr{Torr}                       %torr
     \DeclareSIUnit\EUR{\text{\euro}}                %euro
     \DeclareSIUnit\cps{cps}                         %counts per second
     \DeclareSIUnit\Imp{Imp}                         %impulses
@@ -54,6 +55,9 @@
 
 %disciplines other than math & physics
 \usepackage[version=4]{mhchem}                      %simpler to use than chemfig, https://www.overleaf.com/learn/latex/Chemistry_formulae
+\usepackage{listings}                               %code listings
+    \usepackage{courier}                            %https://tex.stackexchange.com/a/33686
+    \lstset{basicstyle=\footnotesize\ttfamily, keywordstyle=\footnotesize\ttfamily}
 
 %utility
 \usepackage{todonotes}                              %todo annotations
@@ -564,7 +568,7 @@ Mit den gemessenen Werten in Tab. \ref{tab:durchalles} werden die in Tab. \ref{t
     \label{tab:auswalles}
     \begin{tabular}{| l | *{3}{SS|}}
         \hline
-        Versuch             & \multicolumn{2}{C|}{S_1 \ / \ \si{\va}}   & \multicolumn{2}{C|}{Q_1 \ / \ \si{\var}}  & \multicolumn{2}{C|}{\cos \phi \ / \ 1} \\
+        Versuch             & \multicolumn{2}{C|}{S_1 \ / \ \si{\VA}}   & \multicolumn{2}{C|}{Q_1 \ / \ \si{\var}}  & \multicolumn{2}{C|}{\cos \phi \ / \ 1} \\
         \hline
         Leerlauf            & 17,6  & +-0,5                             & 15,1  & +-1,8                             & 0,51  & +-0,13 \\
         Ohm'sch             & 27,2  & +-1,7                             & 11    & +-9                               & 0,91  & +-0,14 \\
@@ -624,7 +628,7 @@ Die in Tab. \ref{tab:aufgabe} geforderten Werte wurden berechnet.
     \label{tab:zusammenfassung}
     \begin{tabular}{| l | *{3}{SS|}}
         \hline
-        Versuch             & \multicolumn{2}{C|}{S_1 \ / \ \si{\va}}   & \multicolumn{2}{C|}{Q_1 \ / \ \si{\var}}  & \multicolumn{2}{C|}{\cos \phi \ / \ 1} \\
+        Versuch             & \multicolumn{2}{C|}{S_1 \ / \ \si{\VA}}   & \multicolumn{2}{C|}{Q_1 \ / \ \si{\var}}  & \multicolumn{2}{C|}{\cos \phi \ / \ 1} \\
         \hline
         Leerlauf            & 17,6  & +-0,5                             & 15,1  & +-1,8                             & 0,51  & +-0,13 \\
         Ohm'sch             & 27,2  & +-1,7                             & 11    & +-9                               & 0,91  & +-0,14 \\
@@ -642,8 +646,7 @@ Die in Tab. \ref{tab:aufgabe} geforderten Werte wurden berechnet.
 
 
 
-\printbibliography
-\addcontentsline{toc}{section}{Literatur}
+\printbibliography[heading=bibintoc]
 
 
 
