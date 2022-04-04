@@ -25,11 +25,12 @@
 \usepackage{eurosym}
 \usepackage[locale=DE,output-decimal-marker={,},separate-uncertainty=true,per-mode=symbol-or-fraction,range-phrase=-]{siunitx} %units, https://ctan.org/pkg/siunitx?lang=en
     %custom units
-    \DeclareSIUnit\va{VA}                           %apparent power
+    \DeclareSIUnit\astronomicalunit{ua}             %overwrite default au, see ISO80000-1 2016-06-15 Tab. 6
+    \DeclareSIUnit\VA{VA}                           %apparent power
     \DeclareSIUnit\var{var}                         %volt-ampere reactive
-    \DeclareSIUnit\umdr{U}                          %revolutions
+    \DeclareSIUnit\U{U}                             %revolutions
     \DeclareSIUnit\px{px}                           %pixel
-    \DeclareSIUnit\torr{Torr}                       %torr
+    \DeclareSIUnit\Torr{Torr}                       %torr
     \DeclareSIUnit\EUR{\text{\euro}}                %euro
     \DeclareSIUnit\cps{cps}                         %counts per second
     \DeclareSIUnit\Imp{Imp}                         %impulses
