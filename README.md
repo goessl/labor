@@ -92,6 +92,8 @@ Einheitenlose Werte in `\num{}`.
 
 #### Bilder
 
+Die Dateien werden im Unterordner [nudes](nudes/) platziert.
+
 Bilder sind in eine zentrierte `figure` einzubetten. Diese ist in den meisten Fällen als Float `H` am besten positioniert (Bild wird genau an dieser Stelle im Text und nirgendwo anders eingefügt).
 
 Die Breite ist nur bei Bedarf zu verändern; z.B. `width=0.5\linewidth`.

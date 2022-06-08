@@ -22,7 +22,6 @@
 
 %math, physics
 \usepackage{amsmath,amsthm,amsfonts,amssymb}        %equation formatting, theorems, fonts (blackboard), access to symbols, https://www.overleaf.com/learn/latex/Mathematical_expressions, https://www.overleaf.com/learn/latex/Theorems_and_proofs, https://www.overleaf.com/learn/latex/Mathematical_fonts, https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols
-\usepackage{eurosym}
 \usepackage[locale=DE,output-decimal-marker={,},separate-uncertainty=true,per-mode=symbol-or-fraction,range-phrase=-]{siunitx} %units, https://ctan.org/pkg/siunitx?lang=en
     %custom units
     \DeclareSIUnit\astronomicalunit{ua}             %overwrite default au, see ISO80000-1 2016-06-15 Tab. 6
@@ -31,7 +30,8 @@
     \DeclareSIUnit\U{U}                             %revolutions
     \DeclareSIUnit\px{px}                           %pixel
     \DeclareSIUnit\Torr{Torr}                       %torr
-    \DeclareSIUnit\EUR{\text{\euro}}                %euro
+    \usepackage{eurosym}                            %euro
+    \DeclareSIUnit\EUR{\text{\euro}}
     \DeclareSIUnit\cps{cps}                         %counts per second
     \DeclareSIUnit\Imp{Imp}                         %impulses
 
@@ -44,7 +44,7 @@
 
 %graphics
 \usepackage{graphicx}                               %graphics, https://www.overleaf.com/learn/latex/Inserting_Images
-    \graphicspath{ {./images/} }                        %images in subfolder to keep root clean
+    \graphicspath{ {./nudes} }                      %images in subfolder to keep root clean
 \usepackage{caption}                                %more caption options
 \usepackage{subcaption}                             %captions of subfigures
     \captionsetup[table]{skip=6pt}
