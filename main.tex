@@ -3,10 +3,9 @@
 
 
 %language
-%https://www.overleaf.com/learn/latex/German
-\usepackage[utf8]{inputenc}                         %input encoding (umlaute)
+%\usepackage[utf8]{inputenc}                         %input encoding (umlaute), https://tex.stackexchange.com/a/583104
 \usepackage[T1]{fontenc}                            %correct encoding in resulting PDF
-\usepackage[ngerman]{babel}                         %German-specific commands
+\usepackage[ngerman]{babel}                         %German-specific commands, https://www.overleaf.com/learn/latex/German
 \usepackage{csquotes}                               %quotation, https://www.overleaf.com/learn/latex/Typesetting_quotations
 
 %document stuff
@@ -42,7 +41,7 @@
 
 %graphics
 \usepackage{graphicx}                               %graphics, https://www.overleaf.com/learn/latex/Inserting_Images
-    \graphicspath{ {./nudes} }                      %images in subfolder to keep root clean
+    \graphicspath{ {./nudes/} }                        %images in subfolder to keep root clean
 \usepackage{caption}                                %more caption options
 \usepackage{subcaption}                             %captions of subfigures
     \captionsetup[table]{skip=6pt}
@@ -51,7 +50,10 @@
 %    \pgfplotsset{compat=1.9}
 %\usepackage{epic}                                   %better picture mode, https://ctan.org/pkg/epic?lang=en
 
-%disciplines other than math & physics
+%special disciplines
+\usepackage{braket}                                 %Bra-Ket/Dirac notation
+    \def\ketbra#1#2{\ket{#1}\bra{#2}}               %author removed ketbra: reintroduce it
+    \def\Ketbra#1#2{\left|{#1}\vphantom{#2}\right\rangle\left\langle{#2}\vphantom{#1}\right|}
 \usepackage[version=4]{mhchem}                      %simpler to use than chemfig, https://www.overleaf.com/learn/latex/Chemistry_formulae
 \usepackage{listings}                               %code listings
     \usepackage{courier}                            %https://tex.stackexchange.com/a/33686
@@ -82,15 +84,22 @@
 \DeclareMathOperator{\CoV}{CoV}
 \DeclareMathOperator{\sgn}{sgn}                     %other
 \DeclareMathOperator{\tr}{tr}
+%sets
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
 
 %theorems, https://www.overleaf.com/learn/latex/Theorems_and_proofs
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
+\theoremstyle{plain}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}[definition]
 \newtheorem{bemerkung}{Bemerkung}[definition]
-\newtheorem{satz}{Satz}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{proposition}{Proposition}[section]
-\newtheorem{korollar}{Korollar}[section]
+\newtheorem{lemma}{Lemma}[definition]
+\newtheorem{korollar}{Korollar}[definition]
+\newtheorem{satz}{Satz}[definition]
+\newtheorem{theorem}{Theorem}[definition]
 
 %math columns, https://tex.stackexchange.com/q/257128
 \newcolumntype{L}{>{$}l<{$}}
