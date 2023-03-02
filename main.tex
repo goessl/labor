@@ -6,7 +6,7 @@
 %\usepackage[utf8]{inputenc}                         %input encoding (umlaute), https://tex.stackexchange.com/a/583104
 \usepackage[T1]{fontenc}                            %correct encoding in resulting PDF
 \usepackage[ngerman]{babel}                         %German-specific commands, https://www.overleaf.com/learn/latex/German
-\usepackage{csquotes}                               %quotation, https://www.overleaf.com/learn/latex/Typesetting_quotations
+\usepackage{csquotes}                               %quotation, https://www.overleaf.com/learn/latex/Typesetting_quotations#csquotes_package
 
 %document stuff
 \usepackage[style=numeric]{biblatex}                %better than builtin bibtex, https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex
@@ -14,14 +14,17 @@
 \usepackage{fancyhdr}                               %custom header & footer, https://www.overleaf.com/learn/latex/Headers_and_footers
 \usepackage{titling}                                %permanently available title, author, ...
 \usepackage{lastpage}                               %total page number
-\usepackage[margin=1in,headheight=28pt]{geometry}   %margins, headheight: 15/28pt for single/double line header
+\usepackage[margin=25mm,headheight=28pt]{geometry}  %margins, headheight: 15/28pt for single/double line header
 \usepackage{pdflscape}                              %single landscape pages, e.g. matplotlib outputs
 \usepackage{pdfpages}                               %include PDFs, https://ctan.org/pkg/pdfpages?lang=en
 \usepackage{hyperref}                               %links, https://www.overleaf.com/learn/latex/Hyperlinks
+    \hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+\raggedbottom                                       %no vertical spaces will be stretched to fit whole page
 
 %math, physics
 \usepackage{amsmath,amsthm,amsfonts,amssymb}        %equation formatting, theorems, fonts (blackboard), access to symbols, https://www.overleaf.com/learn/latex/Mathematical_expressions, https://www.overleaf.com/learn/latex/Theorems_and_proofs, https://www.overleaf.com/learn/latex/Mathematical_fonts, https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols
-\usepackage[locale=DE,output-decimal-marker={,},separate-uncertainty=true,per-mode=symbol-or-fraction,range-phrase=-]{siunitx} %units, https://ctan.org/pkg/siunitx?lang=en
+\usepackage{siunitx}                                %units, https://ctan.org/pkg/siunitx?lang=en
+    \sisetup{locale=DE,output-decimal-marker={,},separate-uncertainty=true,per-mode=symbol-or-fraction,range-phrase=-}
     %custom units
     \DeclareSIUnit\astronomicalunit{ua}             %overwrite default au, see ISO80000-1 2016-06-15 Tab. 6
     \DeclareSIUnit\VA{VA}                           %apparent power
@@ -31,6 +34,7 @@
     \usepackage{eurosym}                            %euro
     \DeclareSIUnit\EUR{\text{\euro}}
     \DeclareSIUnit\dgt{dgt.}                        %digits
+\usepackage{textgreek} % greek symbols in Text / paragraphs
 
 %tables
 \usepackage{multirow}                               %multi row cells, for multicolumn no import is needed, https://www.overleaf.com/learn/latex/Tables#Combining_rows_and_columns
@@ -41,14 +45,15 @@
 
 %graphics
 \usepackage{graphicx}                               %graphics, https://www.overleaf.com/learn/latex/Inserting_Images
-    \graphicspath{ {./nudes/} }                        %images in subfolder to keep root clean
-\usepackage{caption}                                %more caption options
+    \graphicspath{ {./nudes/} }                     %images in subfolder to keep root clean
+\usepackage{caption}                                %more caption options3
+    \captionsetup[figure]{labelfont={bf},name={Abb.}}
+    \captionsetup[table]{labelfont={bf},name={Tab.}}
 \usepackage{subcaption}                             %captions of subfigures
     \captionsetup[table]{skip=6pt}
 %\usepackage{tikz}                                   %generate graphics, https://www.overleaf.com/learn/latex/TikZ_package
 %\usepackage{pgfplots}                               %generate plots, https://www.overleaf.com/learn/latex/Pgfplots_package
 %    \pgfplotsset{compat=1.9}
-%\usepackage{epic}                                   %better picture mode, https://ctan.org/pkg/epic?lang=en
 
 %special disciplines
 \usepackage{braket}                                 %Bra-Ket/Dirac notation
@@ -61,6 +66,7 @@
 
 %utility
 \usepackage{todonotes}                              %todo annotations
+    \newcommand{\td}{\todo[inline]}                 %for fast inline todo annotations
 \usepackage[normalem]{ulem}                         %strike through text
 
 
@@ -91,6 +97,7 @@
 \newcommand{\C}{\mathbb{C}}
 
 
+
 %theorems, https://www.overleaf.com/learn/latex/Theorems_and_proofs
 \theoremstyle{plain}
 \newtheorem{definition}{Definition}
@@ -100,6 +107,8 @@
 \newtheorem{korollar}{Korollar}[definition]
 \newtheorem{satz}{Satz}[definition]
 \newtheorem{theorem}{Theorem}[definition]
+
+
 
 %math columns, https://tex.stackexchange.com/q/257128
 \newcolumntype{L}{>{$}l<{$}}
