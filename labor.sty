@@ -1,0 +1,125 @@
+\ProvidesPackage{labor}[2023-03-02 Preamble for NAWI Graz laboratories] %https://www.overleaf.com/learn/latex/Management_in_a_large_project#Preamble_in_a_separate_file
+
+
+
+%language
+%\usepackage[utf8]{inputenc}                         %input encoding (umlaute), https://tex.stackexchange.com/a/583104
+\usepackage[T1]{fontenc}                            %correct encoding in resulting PDF
+\usepackage[ngerman]{babel}                         %German-specific commands, https://www.overleaf.com/learn/latex/German
+\usepackage{csquotes}                               %quotation, https://www.overleaf.com/learn/latex/Typesetting_quotations#csquotes_package
+
+%document stuff
+\usepackage[style=numeric]{biblatex}                %better than builtin bibtex, https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex
+    \addbibresource{bibliography.bib}
+\usepackage{fancyhdr}                               %custom header & footer, https://www.overleaf.com/learn/latex/Headers_and_footers
+\usepackage{titling}                                %permanently available title, author, ...
+\usepackage{lastpage}                               %total page number
+\usepackage[margin=25mm,headheight=28pt]{geometry}  %margins, headheight: 15/28pt for single/double line header
+\usepackage{pdflscape}                              %single landscape pages, e.g. matplotlib outputs
+\usepackage{pdfpages}                               %include PDFs, https://ctan.org/pkg/pdfpages?lang=en
+\usepackage{hyperref}                               %links, https://www.overleaf.com/learn/latex/Hyperlinks
+    \hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+\raggedbottom                                       %no vertical spaces will be stretched to fit whole page
+
+%math, physics
+\usepackage{amsmath,amsthm,amsfonts,amssymb}        %equation formatting, theorems, fonts (blackboard), access to symbols, https://www.overleaf.com/learn/latex/Mathematical_expressions, https://www.overleaf.com/learn/latex/Theorems_and_proofs, https://www.overleaf.com/learn/latex/Mathematical_fonts, https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols
+\usepackage{siunitx}                                %units, https://ctan.org/pkg/siunitx?lang=en
+    \sisetup{locale=DE,output-decimal-marker={,},separate-uncertainty=true,per-mode=symbol-or-fraction,range-phrase=-}
+    %custom units
+    \DeclareSIUnit\astronomicalunit{ua}             %overwrite default au, see ISO80000-1 2016-06-15 Tab. 6
+    \DeclareSIUnit\VA{VA}                           %apparent power
+    \DeclareSIUnit\var{var}                         %volt-ampere reactive
+    \DeclareSIUnit\U{U}                             %revolutions
+    \DeclareSIUnit\px{px}                           %pixel
+    \usepackage{eurosym}                            %euro
+    \DeclareSIUnit\EUR{\text{\euro}}
+    \DeclareSIUnit\dgt{dgt.}                        %digits
+\usepackage{textgreek} % greek symbols in Text / paragraphs
+
+%tables
+\usepackage{multirow}                               %multi row cells, for multicolumn no import is needed, https://www.overleaf.com/learn/latex/Tables#Combining_rows_and_columns
+\usepackage{array}                                  %fixed sized cells, https://www.overleaf.com/learn/latex/Tables#Tables_with_fixed_length
+\usepackage{float}                                  %positioning, https://www.overleaf.com/learn/latex/Positioning_of_Figures
+\usepackage{longtable}                              %multipage tables, https://www.overleaf.com/learn/latex/Tables#Multi-page_tables
+\usepackage{enumitem}                               %customisable lists
+
+%graphics
+\usepackage{graphicx}                               %graphics, https://www.overleaf.com/learn/latex/Inserting_Images
+    \graphicspath{ {./nudes/} }                     %images in subfolder to keep root clean
+\usepackage{caption}                                %more caption options3
+    \captionsetup[figure]{labelfont={bf},name={Abb.}}
+    \captionsetup[table]{labelfont={bf},name={Tab.}}
+\usepackage{subcaption}                             %captions of subfigures
+    \captionsetup[table]{skip=6pt}
+%\usepackage{tikz}                                   %generate graphics, https://www.overleaf.com/learn/latex/TikZ_package
+%\usepackage{pgfplots}                               %generate plots, https://www.overleaf.com/learn/latex/Pgfplots_package
+%    \pgfplotsset{compat=1.9}
+
+%special disciplines
+\usepackage{braket}                                 %Bra-Ket/Dirac notation
+    \def\ketbra#1#2{\ket{#1}\bra{#2}}               %author removed ketbra: reintroduce it
+    \def\Ketbra#1#2{\left|{#1}\vphantom{#2}\right\rangle\left\langle{#2}\vphantom{#1}\right|}
+\usepackage[version=4]{mhchem}                      %simpler to use than chemfig, https://www.overleaf.com/learn/latex/Chemistry_formulae
+\usepackage{listings}                               %code listings
+    \usepackage{courier}                            %https://tex.stackexchange.com/a/33686
+    \lstset{basicstyle=\footnotesize\ttfamily, keywordstyle=\footnotesize\ttfamily}
+
+%utility
+\usepackage{todonotes}                              %todo annotations
+    \newcommand{\td}{\todo[inline]}                 %for fast inline todo annotations
+\usepackage[normalem]{ulem}                         %strike through text
+
+
+
+%custom operators, https://www.overleaf.com/learn/latex/Operators#Defining_your_own_operators
+\DeclareMathOperator{\arsinh}{arsinh}               %trig
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+\DeclareMathOperator{\atan2}{atan2}
+\DeclareMathOperator{\grad}{grad}                   %multivariate analysis
+\let\div\relax
+\DeclareMathOperator{\div}{div}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\dom}{dom}                     %functional analysis
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Avg}{Avg}                     %staticstics
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\StD}{StD}
+\DeclareMathOperator{\CoV}{CoV}
+\DeclareMathOperator{\sgn}{sgn}                     %other
+\DeclareMathOperator{\tr}{tr}
+%sets
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+
+
+%theorems, https://www.overleaf.com/learn/latex/Theorems_and_proofs
+\theoremstyle{plain}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}[definition]
+\newtheorem{bemerkung}{Bemerkung}[definition]
+\newtheorem{lemma}{Lemma}[definition]
+\newtheorem{korollar}{Korollar}[definition]
+\newtheorem{satz}{Satz}[definition]
+\newtheorem{theorem}{Theorem}[definition]
+
+
+
+%math columns, https://tex.stackexchange.com/q/257128
+\newcolumntype{L}{>{$}l<{$}}
+\newcolumntype{C}{>{$}c<{$}}
+\newcolumntype{R}{>{$}r<{$}}
+
+
+
+%adjust headheight on geometry import: 15/28pt for single/double line header
+\pagestyle{fancyplain}
+\fancyhead[L]{\semester \\ \thedate}
+\fancyhead[C]{Gruppe \groupnumber \\ \theauthor}
+\fancyhead[R]{Labor \laboratorynumber \\ \thetitle}
+\fancyfoot[C]{\thepage{ }/ \pageref*{LastPage}}
