@@ -3,11 +3,11 @@
 Dies ist eine Latex-Vorlage für die Labore des Physik-Bachelors an der TU Graz & KF Graz.
 
 Fertige Protokolle, welche mit dieser Vorlage gefertigt wurden sind auf [https://www.student.tugraz.at/goessl/](https://www.student.tugraz.at/goessl/) einsehbar.
-Ein Beispielprojekt befindet sich im Unterordner [examples/tu6_transformator/](examples/tu6_transformator/).
+Ein Beispielprojekt befindet sich im Unterordner [examples/tu6_transformator/](examples/tu6_transformator/) (dieses wird jedoch nicht zu jedem Update angepasst und basiert deshalb wahrscheinlich auf einer älteren Version).
 
- - [Vorbereitung](#vorbereitung)
-     - [Deckblatt](#deckblatt)
-     - [main.tex](#maintex)
+ - [Vorlage - main.tex](#vorlage---main.tex)
+     - [Packages - labor.sty](#packages---labor.sty)
+     - [Deckblatt - cover.tex](#deckblatt---cover.tex)
  - [Anwendung](#anwendung)
      - [Text & Mathematik](#text--mathematik)
      - [Werte](#werte)
@@ -21,14 +21,39 @@ Ein Beispielprojekt befindet sich im Unterordner [examples/tu6_transformator/](e
  - [Danksagung & hilfreiche Links](#danksagung--hilfreiche-links)
  - [Lizenz (MIT)](#lizenz-mit)
 
-## Vorbereitung
+## Vorlage - [main.tex](main.tex)
 
-Es wird checklistenmäßig aufgezählt, wie dieses Template für ein Experiment aufgesetzt wird.
+Es wird checklistenmäßig aufgezählt, wie dieses Template an die verschiedenen Autoren und Experimente angepasst wird um einheitlich gleiche Protokolle zu erhalten.
 
-### Deckblatt
+### Packages - [labor.sty](labor.sty)
 
-Das Deckblatt kann auch händisch ausgefüllt und dem Protokoll beigelegt werden. Bei den seit Corona standardmäßigen Onlineabgaben ist es jedoch meist effizienter die Datei am PC zu bearbeiten.
-Es sind die Deckblätter für das Labor 1 & 2 sowie die Fortgeschrittenenpraktika 1 & 2 als `.doc` und `.pdf` in dem Unterordner [cover](cover/) enthalten. Das passende, ausgefüllte Deckblatt wird in das Hauptverzeichnis gezogen, dessen Suffix entfernt (Dateiname nur mehr `Deckblatt.pdf`) und der verbleibende Ordner gelöscht.
+Eine Kollektion an oft verwendeten Packages werden mit dem separaten `labor.sty` importiert, so dass man sich nicht mit dem Zusammensuchen seiner Packages sondern direkt mit dem Verfassen seines Protokolls beginnen kann. Dies geschieht mithilfe des `\usepackage{labor}`-Befehls `main.tex` File.
+
+### Deckblatt - [cover.tex](cover.tex)
+
+Das Deckblatt wird automatisch generiert. Dazu sind die Werte vor `\input{cover}` entsprechend auszufüllen bzw. der richtige Lehrveranstaltungstitel auszukommentieren. Z.B.:
+
+        \newcommand\laboratorynumber{10}
+        \title{Oszillograph}
+        \newcommand\supervisor{Mustermann, Max}
+        \newcommand\groupnumber{04}
+        
+        \newcommand\participantonelastname{Angermann}
+        \newcommand\participantonefirstname{Leo}
+        \newcommand\participantoneid{11911449}
+        \newcommand\participanttwolastname{Gössl}
+        \newcommand\participanttwofirstname{Sebastian}
+        \newcommand\participanttwoid{11904703}
+        
+        \newcommand\degreeid{UF 033 678}
+        \newcommand\semester{23WS}
+        \date{2023-03-02}
+        
+        %select correct course title
+        \newcommand\coursetitle{Einführung in die \\ physikalischen Messmethoden}
+
+Alternativ kann auch ein kurzer Titelabsatz, anstatt einer ganzen Seite, mit `\maketitle` erstellt werden (dann wird nur mehr `title`, `author` und `date` benötigt) oder fertiges Deckblatt im PDF-Format dem Projekt zugefügt werden und mit `\includepdf{DATEINAME.pdf}` eingefügt werden.
+
  1. Übungstitel: Laut Rotationsschema, z.B. `TU1: Dünne Linsen`.
  2. Betreuer: Im Online-Verzeichnis ([TeachCenter](tc.tugraz.at) & [Moodle](moodle.uni-graz.at)) gibt es meist eine Datei mit den Betreuern der jeweiligen Experimente. Bei Unsicherheit in der Einheit nach dem Namen fragen. In den Onlinesystemen ([TU Graz online](online.tugraz.at) & [uni-graz online](online.uni-graz.at)) kann man notfalls in der Lehrveranstaltungsseite die beteiligten Personen durchsuchen; im [TU Graz online](online.tugraz.at) gibt es zusätzlich eine eigene Personensuche. Der Name ist ohne Titel anzugeben; z.B. `Gössl, Sebastian`; siehe [Konventionen](#eigene-konventionen).
  3. Gruppennummer: Laut Rotationsschema, z.B. `4`.
@@ -41,20 +66,6 @@ Es sind die Deckblätter für das Labor 1 & 2 sowie die Fortgeschrittenenpraktik
  7. Matrikelnummer: In der Reihenfolge der Namen.
  8. Datum: Tag, an welchem das Experiment durchgeführt wurde, im in Österreich gewohnten `DD.MM.YYYY`-Format.
  9. Semester: Im Format `YY[WS|SS]`; z.B. `22SS` für 2022 Sommersemester.
-
-### main.tex
-
-In der `main.tex`-Datei sind ein paar Felder wie im Deckblatt einzutragen, da diese in der Kopfzeile erscheinen werden:
- 1. `\title`: Für den Titel wird das Format `[Labor] \\ [Experimentname]`, wie z.B. `Labor 2 \\ TU1: Dünne Linsen` um mit dem Titelblatt bzw. dem Rotationsschema einheitlich zu bleiben, verwendet.
-    Labore:
-    - `Labor 1`
-    - `Labor 2`
-    - `Fortgeschrittenenpraktikum 1`, abgekürzt `Fortprak. 1`
-    - `Fortgeschrittenenpraktikum 2`, abgekürzt `Fortprak. 2`
- 2. `\author`: Autor ist die Gruppe mit den Namen der Gruppenteilnehmer, im Format `Gruppe [N] \\ [Nachname] \& [Nachname]`; z.B. `Gruppe 4 \\ Angermann \& Gössl`.
- 4. `\date`: Datum als `YY[WS|SS] \\ DD.MM.YYYY`.
-
-Sollte die Kopfzeile einzeilig möglich sein (normalerweise nicht möglich da sich der Text überlappen würde), ist dies zu nutzen indem die Zeilenumbrüche durch einen Bindestrich ersetzt werden und die `headheight` des Packages `geometry` beim Importieren von `28pt` auf `15pt` verringert wird. 
 
 Da zum Zeitpunkt des Verfassens dieser Vorlage noch immer eine viele Labore im Onlinemodus geführt werden, ist das Kapitel `Anmerkung` standardmäßig in der Vorlage enthalten. Es folgen die Standardfloskeln für ein Videolabor und eine Hintereinanderausführung:
 
@@ -106,12 +117,11 @@ Beispiel: siehe im nächsten Unterkapitel.
 
 ### Werte
 
-Werte mit Einheiten in `\SI{}{}` (z.B. `\SI{2,0+-0,4}{\m}` für zwei Meter mit kleiner Unsicherheit). Einheiten alleine in `\si{}` (z.B. `\si{\m}` für Meter). Als Dezimalzeichen ist das Komma eingestellt.
+Werte mit Einheiten in `\qty{}{}` (z.B. `\qty{2,0+-0,4}{\m}` für zwei Meter mit kleiner Unsicherheit). Einheiten alleine in `\unit{}` (z.B. `\unit{\m}` für Meter). Als Dezimalzeichen ist das Komma eingestellt. (`\SI{}{}` & `\si{}` sind deprecated)
 
 Unsicherheiten so gut wie immer absolut mit `+-` zum Wert dazu angeben, außer z.B. in der Diskussion zum Vergleich relativ.
 
 Oft gebrauchte, jedoch nicht standardmäßig implementierte Einheiten wurden bereits hinzugefügt:
- - `ua` (Astronomische Einheit lt. ISO80000-1 2016-06-15 Tab. 6)
  - `VA` (Voltampere)
  - `var` (Var, Blindwatt)
  - `U` (Umdrehungen)
@@ -143,7 +153,7 @@ Z.B.:
 
 Weiterführend: [siunitx-Dokumentation](ctan.org/pkg/siunitx).
 
-### Bilder
+### Bilder - [nudes/](nudes/)
 
 Labels mit vorangestelltem `fig:`.
 
@@ -250,7 +260,7 @@ Für ausführlichere und genauere Angaben sind die Dokumentationen der Packages 
 
 MIT License
 
-Copyright (c) 2021 Sebastian Gössl
+Copyright (c) 2021 Sebastian Gössl & Angermann Leo
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
