@@ -3,7 +3,7 @@
 
 
 %language
-%\usepackage[utf8]{inputenc}                         %input encoding (umlaute), https://tex.stackexchange.com/a/583104
+%\usepackage[utf8]{inputenc}                         %input encoding (umlaute), https://de.overleaf.com/learn/latex/German#Input_encoding:_inputenc,_UTF-8_and_a_change_to_LaTeX_in_2018
 \usepackage[T1]{fontenc}                            %correct encoding in resulting PDF
 \usepackage[ngerman]{babel}                         %German-specific commands, https://www.overleaf.com/learn/latex/German
 \usepackage{csquotes}                               %quotation, https://www.overleaf.com/learn/latex/Typesetting_quotations#csquotes_package
@@ -24,7 +24,7 @@
 %math, physics
 \usepackage{amsmath,amsthm,amsfonts,amssymb}        %equation formatting, theorems, fonts (blackboard), access to symbols, https://www.overleaf.com/learn/latex/Mathematical_expressions, https://www.overleaf.com/learn/latex/Theorems_and_proofs, https://www.overleaf.com/learn/latex/Mathematical_fonts, https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols
 \usepackage{siunitx}                                %units, https://ctan.org/pkg/siunitx?lang=en
-    \sisetup{locale=DE,output-decimal-marker={,},separate-uncertainty=true,per-mode=symbol-or-fraction,range-phrase=-}
+    \sisetup{locale=DE,separate-uncertainty=true,per-mode=symbol-or-fraction,range-phrase=-}
     %custom units
     \DeclareSIUnit\astronomicalunit{ua}             %overwrite default au, see ISO80000-1 2016-06-15 Tab. 6
     \DeclareSIUnit\VA{VA}                           %apparent power
