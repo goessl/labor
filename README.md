@@ -238,8 +238,8 @@ In der Bibliography-Datei wurden bereits mehrere möglicherweise nützliche Büc
 ### (Eigene) Konventionen
 
  - Das Semester sollte generell immer als `[WS|SS]`, z.B. `21WS` angegeben werden, da dieses Format kürzer, trotzdem gut leserlich und beim Dateimanagment nützlicher ist. Tagesangaben im in Österreich üblichen `DD.MM.YYYY`, Uhrzeiten in 24h-Format `hh:mm`; oder im ISO8601 extended format `YYYY-MM-DD` bzw. `Thh:mm`. TODO: Evtll. komplett ISO8601? Kompatible Opensource-Alternative?
-
  - Namen werden den [Regeln für die alphabetische Katalogisierung](https://de.wikipedia.org/wiki/Regeln_f%C3%BCr_die_alphabetische_Katalogisierung) entsprechend im Format `Nachname, Vorname` (bei Spezialfällen, wie `Peter von der Mühll > Mühll, Peter von der` bei Anahme der deutschen Sprache als Herkunft lt. §314a, ist auf die Regeln zu achten). Titulaturen sind nicht anzusetzten (§326 in der 2. Auflage, 2006). Dies verbessert die Orientierung in Listen, Vereinfacht das Lesen, erfordert weniger Nachbesserungen und wirkt dem in Österreich herschenden Titelfetischismus entgegen. TODO: RAK ist nicht mehr aktuell, RDA ist kostenpflichtig. Opensource-Alternative finden.
+ - Einheiten und Größen werden nach der SI-Broschüre verwendet, nachrangig ÖNORM EN ISO 8000 (da diese mehrfach widersprüchliche/ungenaue Angaben enthält).
 
 ### Anmerkungen
 
